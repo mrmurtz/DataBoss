@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="/css/formStyles.css">
+  <link rel="stylesheet" type="text/css" href="/css/canvasStyles.css">
+  <title>DataBoss</title>
+</head>
+
+<body>
+
+  <div id="page-container" class="container">
+    <div class="row">
+
+      <div class="col s5" id="form">
+        <% include ../partials/form %>
+      </div>
+
+      <div class="col s7" id="diagram">
+        <% include ../partials/draw %>
+      </div>
+
+    </div>
+
+    <div id="cheat-sheet" class="row">
+      <div class="col s12">
+        <% include ../partials/cheatSheet %>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="/js/paper-full.js"></script>
+  <script type="text/paperscript" src="../src/diagram.js" canvas="myCanvas"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+  <script type="text/javascript" src="/src/formInterface.js"></script>
+  <script type="text/javascript" src="/src/userSelections.js"></script>
+
+</body>
+</html>
