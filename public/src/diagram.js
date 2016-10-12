@@ -3,49 +3,56 @@ function Diagram() {
 }
 
 // INFORMATION RECEIVED AS JSON OBJECT
-var UserSelection = {language: "1", framework: "1", orm: "1", db: "1", tableName: "user", columnName: "name"};
-var label = UserSelection.tableName;
+var UserSelection = {language: "1", framework: "1", orm: "1", db: "1", tableName1: "user", columnName: "name"};
+var label = UserSelection.tableName1;
 var property = UserSelection.columnName;
 
 
-// MAKING A RECTANGLE
+// CREATING A RECTANGLE
 var rectangle1 = new Rectangle(new Point(50,50), new Point(400,500));
-var cornersize = new Size(10, 10);
-var path = new Path.RoundRectangle(rectangle1, cornersize);
+var cornersize1 = new Size(10, 10);
+var path1 = new Path.RoundRectangle(rectangle1, cornersize1);
 
-// MAKING THE LINE UNDERNEATH MODEL NAME
-var header = new Path();
+// CREATING THE LINE UNDERNEATH MODEL NAME
+var header1 = new Path();
 var hp1 = new Point(50, 120);
 var hp2 = new Point(400, 120);
-header.add(hp1);
-header.add(hp2);
+header1.add(hp1);
+header1.add(hp2);
 
-// MAKING MODEL NAME
-var text = new PointText(new Point(220, 100));
-text.justification = "center";
-text.fillColor = "black";
-text.fontSize = 25;
-text.content = label;
+// CREATING MODEL NAME
+var text1 = new PointText(new Point(220, 100));
+text1.justification = "center";
+text1.fillColor = "black";
+text1.fontSize = 25;
+text1.content = label;
 
-// MAKING COLUMN NAME
-var column = new PointText(new Point(80, 160))
-column.justification = "left";
-column.fillColor = "black";
-column.fontSize = 15;
-column.content = property + ":";
+// CREATING COLUMN NAME
+var column1 = new PointText(new Point(80, 160))
+column1.justification = "left";
+column1.fillColor = "black";
+column1.fontSize = 15;
+column1.content = property + ":";
 
 var model1 = new Group ({
 
-  children: [path, header, text, column],
+  children: [path1, header1, text1, column1],
 
   strokeColor: 'black',
 
-  position: view.center
+  position: view.left
 
 });
 
+var model2 = model1.clone();
+model2.strokeColor = 'black';
+model2.position = new Point(800, 275);
+
+
+
+
 Diagram.prototype = {
-  
+
   makeBox: function() {
     var rectangle1 = new Rectangle(new Point(50,50), new Point(400,500));
     var cornersize = new Size(10, 10);
@@ -95,11 +102,14 @@ $(document).ready(function(){
 
   var diagram = new Diagram();
 
+
+
+
   $('#create-diagram').click(function(){
     // diagram.makeBox();
     // diagram.labelBox(label);
     // diagram.makeColumn(column);
-    model
+    // model
   });
 
   $('#create-line').click(function(){
