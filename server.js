@@ -10,6 +10,10 @@ app.get('/', function(req, res) {
   res.render('pages/index');
 });
 
+app.get('/test', function(req, res) {
+  res.render('pages/test');
+});
+
 app.listen(3000, function() {
   console.log("DataBoss is crushing it on port 3000");
 });

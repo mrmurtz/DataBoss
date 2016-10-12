@@ -3,9 +3,11 @@ function Diagram() {
 }
 
 // INFORMATION RECEIVED AS JSON OBJECT
-var UserSelection = {language: "1", framework: "1", orm: "1", db: "1", tableName1: "user", columnName: "name"};
+var UserSelection = {language: "1", framework: "1", orm: "1", db: "1", tableName1: "user", tableName2: "photo", columnName: "name", columnName2: "image"};
 var label = UserSelection.tableName1;
 var property = UserSelection.columnName;
+var label2 = UserSelection.tableName2;
+var property2 = UserSelection.columnName2;
 
 // CREATING A RECTANGLE
 var rectangle1 = new Rectangle(new Point(50,50), new Point(400,500));
@@ -33,6 +35,7 @@ column1.fillColor = "black";
 column1.fontSize = 15;
 column1.content = property + ":";
 
+
 var model1 = new Group ({
 
   children: [path1, header1, text1, column1],
@@ -44,5 +47,7 @@ var model1 = new Group ({
 });
 
 var model2 = model1.clone();
+model2.children[2].content = label2;
+model2.children[3].content = property2;
 model2.strokeColor = 'black';
 model2.position = new Point(800, 275);
