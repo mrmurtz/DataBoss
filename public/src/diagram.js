@@ -2,73 +2,47 @@ function Diagram() {
 
 }
 
-Diagram.prototype = {
+// INFORMATION RECEIVED AS JSON OBJECT
+var UserSelection = {language: "1", framework: "1", orm: "1", db: "1", tableName1: "user", columnName: "name"};
+var label = UserSelection.tableName1;
+var property = UserSelection.columnName;
 
-  makeBox: function() {
-    var rectangle1 = new Rectangle(new Point(50,50), new Point(400,500));
-    var cornersize = new Size(10, 10);
-    var path = new Path.RoundRectangle(rectangle1, cornersize);
-    path.fillColor = "#EAF1F4";
-    path.strokeColor = "#E06C72";
-    path.strokeWidth = 4;
-  },
+// CREATING A RECTANGLE
+var rectangle1 = new Rectangle(new Point(50,50), new Point(400,500));
+var cornersize1 = new Size(10, 10);
+var path1 = new Path.RoundRectangle(rectangle1, cornersize1);
 
-  makeLine: function(){
-    var from = new Point(400, 250);
-    var to = new Point(700, 250);
-    var line = new Path.Line(from, to);
-    line.strokeColor = "#E06C72";
-    line.strokeWidth = 4;
-  },
+// CREATING THE LINE UNDERNEATH MODEL NAME
+var header1 = new Path();
+var hp1 = new Point(50, 120);
+var hp2 = new Point(400, 120);
+header1.add(hp1);
+header1.add(hp2);
 
-  labelBox: function(value){
-    var text1 = new PointText(new Point(220, 100));
-    text1.justification = "center";
-    text1.fillColor = "black";
-    text1.content = value;
-  },
+// CREATING MODEL NAME
+var text1 = new PointText(new Point(220, 100));
+text1.justification = "center";
+text1.fillColor = "black";
+text1.fontSize = 25;
+text1.content = label;
 
+// CREATING COLUMN NAME
+var column1 = new PointText(new Point(80, 160))
+column1.justification = "left";
+column1.fillColor = "black";
+column1.fontSize = 15;
+column1.content = property + ":";
 
+var model1 = new Group ({
 
+  children: [path1, header1, text1, column1],
 
-  // var rectangle2 = new Rectangle(new Point(700,50), new Point(1050,500));
-  // var cornersize = new Size(10, 10);
-  // var path = new Path.RoundRectangle(rectangle2, cornersize);
-  // path.fillColor = "#EAF1F4";
-  // path.strokeColor = "#E06C72";
-  // path.strokeWidth = 4;
-  //
-  // var text2 = new PointText(new Point(850, 100));
-  // text2.justification = "center";
-  // text2.fillColor = "black";
-  // text2.content = "Tweets";
+  strokeColor: 'black',
 
-  // var text = new PointText(new Point(550, 200));
-  // text.justification = "center";
-  // text.fillColor = "black";
-  // text.content = "One to many";
-
-};
-
-
-
-
-
-$(document).ready(function(){
-
-  var diagram = new Diagram();
-
-  $('#create-diagram').click(function(){
-    diagram.makeBox();
-  });
-
-  $('#create-line').click(function(){
-    diagram.makeLine();
-  });
-
-  $('input[name=label-btn]').click(function(){
-    var label = $('input[name=label-name]').val();
-    diagram.labelBox(label);
-  });
+  position: view.left
 
 });
+
+var model2 = model1.clone();
+model2.strokeColor = 'black';
+model2.position = new Point(800, 275);
