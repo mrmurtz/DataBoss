@@ -14,17 +14,37 @@ $(document).ready(function() {
               o[this.name] = this.value || '';
           }
       });
-
-      // var language = o.language;
-      // console.log(language);
-      // return o;
+      console.log(o);
+      return o;
   };
 
-  $(function() {
-      $('form').submit(function() {
-        $('form').serializeObject();
-          return false;
-      });
+$(function() {
+    $('form').submit(function() {
+      var userSelection = $('form').serializeObject();
+      console.log(userSelection);
+        $('#result').append(marked(db_commands(userSelection)));
+      return false;
+    });
   });
-
 });
+
+function db_commands(userSelection) { return "## Commands:\n\n" +
+                  "### Install Rails gem\n\n" +
+                  "`$ gem install rails`\n\n" +
+                  "### Set up new Rails app with PostgreSQL\n\n" +
+                  "`$ rails new " + userSelection.appName + " -d postgresql -T`\n\n" +
+                  "### Build database:\n\n" +
+                  "`$ bin/rake db:create`\n\n" +
+                  "Your Terminal should have the following output:\n\n" +
+                  "Created database '" + userSelection.appName + "_development'\n\n" +
+                  "Created database '" + userSelection.appName + "_test'\n\n" +
+                  "### Creating Models\n\n" +
+                  "`$ bin/rails g model " + userSelection.tableName + " <property>:<data type> <property>:<data type>`\n\n" +
+                  "This command:\n\n" +
+                  "* creates a new model, which tells the app what a 'student' is and what properties (first name and last name) it has.\n\n" +
+                  "* creates a **migration** which contains instructions for Rake ('Ruby `make`') to update the database.\n\n" +
+                  "Run database migration to update your database with the newly created model/table:\n\n" +
+                  "`$ bin/rake db:migrate`\n\n" +
+                  "By default running `$ bin/rake db:migrate` will run in the development environment. To run migrations against another environment, e.g. the test environment run:\n\n" +
+                  "`$ bin/rake db:migrate RAILS_ENV=test`\n\n";
+}
