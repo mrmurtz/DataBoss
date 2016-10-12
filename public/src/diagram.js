@@ -30,13 +30,22 @@ Diagram.prototype = {
     var text = new PointText(new Point(220, 100));
     text.justification = "center";
     text.fillColor = "black";
-    text.fontSize = 20;
+    text.fontSize = 25;
     text.content = value;
   },
+
+  makeColumn: function(value) {
+    var text = new PointText(new Point(80, 160))
+    text.justification = "left";
+    text.fillColor = "black";
+    text.fontSize = 15;
+    text.content = value + ":";
+  }
 };
 
-var UserSelection = {language: "1", framework: "1", orm: "1", db: "1", tableName: "user"};
+var UserSelection = {language: "1", framework: "1", orm: "1", db: "1", tableName: "user", columnName: "name"};
 var label = UserSelection.tableName;
+var column = UserSelection.columnName;
 
 
 $(document).ready(function(){
@@ -46,6 +55,7 @@ $(document).ready(function(){
   $('#create-diagram').click(function(){
     diagram.makeBox();
     diagram.labelBox(label);
+    diagram.makeColumn(column);
   });
 
   $('#create-line').click(function(){
