@@ -2,7 +2,6 @@ $(document).ready(function(){
   var raw_data;
   $.getJSON("/data/raw_data.json", function(json){
       raw_data = json;
-      console.log(raw_data);
       $.each(raw_data.language, function(key, value) {
         $("#language").append($('<option></option>').attr("value", key).append(value));
       });
@@ -17,7 +16,6 @@ $(document).ready(function(){
       });
   });
   $('#language').trigger('contentChanged');
-
 
 });
 
