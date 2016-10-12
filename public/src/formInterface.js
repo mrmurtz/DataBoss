@@ -14,8 +14,10 @@ $(document).ready(function() {
               o[this.name] = this.value || '';
           }
       });
-      console.log(o);
-      return o;
+
+      // var language = o.language;
+      // console.log(language);
+      // return o;
   };
 
   $(function() {

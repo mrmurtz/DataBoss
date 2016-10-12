@@ -1,3 +1,9 @@
 #input-box {
   height: 30px;
 }
+
+code {
+  background:#F8F8FF;
+  border: grey;
+  padding:6px;
+}​
