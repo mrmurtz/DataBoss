@@ -24,7 +24,6 @@ $(document).ready(function(){
 
   $("#form-slide-in").click(function(event){
     event.preventDefault();
-    console.log("clicking!");
     $("#form").toggleClass("form-show col s3");
     $("#diagram").toggleClass("s11");
     $("#form-content").toggle('show');
@@ -32,7 +31,6 @@ $(document).ready(function(){
 
   $("#form-slide-in2").click(function(event){
     event.preventDefault();
-    console.log("clicking!");
     $("#form").toggleClass("form-show col s3");
     $("#diagram").toggleClass("s11");
     $("#form-content").toggle('show');

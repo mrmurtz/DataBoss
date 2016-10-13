@@ -1,3 +1,8 @@
+/*Colour Pallette - Light to Dark
+#f7fcf0    #e0f3db    #ccebc5
+#a8ddb5    #7bccc4    #4eb3d3
+#2b8cbe    #0868ac    #084081 */
+
 h5 {
   font-size: 1.2em;
 }
@@ -7,9 +12,10 @@ h5 {
 }
 
 .form-block {
+  float: left;
   height: 100vh;
   background-color: #f7fcf0;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow:0 0 20px 0 rgba(0,0,0,.5);
   -webkit-transition: 0.5s ease-in;
   -moz-transition: 0.5s ease-in;
@@ -21,12 +27,15 @@ h5 {
 .form-block.form-show {
   width: 330px;
   margin: 0 0 0 -250px;
-  position: fixed;
 
 }
 
 #form-title {
   margin-bottom: 0px;
+}
+
+#form-btn {
+  background-color: #084081;
 }
 
 #diagram {
@@ -46,8 +55,6 @@ h5 {
   margin-top: 0px;
 }
 
-
-/*Light to Dark
-#f7fcf0    #e0f3db    #ccebc5
-#a8ddb5    #7bccc4    #4eb3d3
-#2b8cbe    #0868ac    #084081 */
+#cheat-sheet-content {
+  display: none;
+}
