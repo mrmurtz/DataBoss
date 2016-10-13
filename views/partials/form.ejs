@@ -30,13 +30,37 @@
         </select>
       </div>
 
-    <div class="col s4">
+      <div class="col s4">
+          <h5>Database</h5>
+      </div>
+      <div class="input-field col s8" id="input-box">
+        <select id="Database" name="Database">
+        </select>
+      </div>
+
+      <div class="col s4">
+          <h5>APP Name</h5>
+      </div>
+      <div class="input-field col s8" id="input-box">
+        <input id="app-name" type="text" class="validate" name="appName">
+        <label for="app-name">App Name</label>
+      </div>
+
+<div id="clonedInput1" class="clonedInput">
+  <div class="happy">
+    <div class="col s4" id="table_form">
         <h5>Table Name</h5>
     </div>
     <div class="input-field col s8" id="input-box">
       <input id="table-name" type="text" class="validate" name="tableName">
-      <label for="table-name">Table Name</label>
+      <label for="table-name">Table  Name</label>
     </div>
+    </div>
+    <div class="actions">
+        <button class="clone">Clone</button>
+        <button class="remove">Remove</button>
+    </div>
+  </div>
 
   <div class="col s12">
     <input type="Submit" class="btn right">
