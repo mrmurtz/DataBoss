@@ -3,7 +3,7 @@
 
 <form class="" action="" method="post">
 
-  <div class="row">
+  <div class="row" >
 
       <div class="col s4">
           <h5>Language</h5>
@@ -46,21 +46,63 @@
         <label for="app-name">App Name</label>
       </div>
 
-<div id="clonedInput1" class="clonedInput">
-  <div class="happy">
-    <div class="col s4" id="table_form">
-        <h5>Table Name</h5>
+
+    <div id="table" class="col s12">
+
+      <div class="col s12" id='one-entry'>
+
+        <div class="col s4" id="table_form">
+            <h5>Table Name</h5>
+        </div>
+        <div class="input-field col s8" id="input-box">
+          <input id="table-name" type="text" class="validate" name="tableName">
+          <label for="table-name">Table Name</label>
+        </div>
+
+        <div class="col s4" id="column_form">
+            <h5>Column Name</h5>
+        </div>
+        <div class="input-field col s8" id="input-box">
+          <input id="column-name" type="text" class="validate" name="columnName">
+          <label for="column-name">Column Name</label>
+        </div>
+
+        <div class="col s4" id="dataType_form">
+            <h5>Data Type</h5>
+        </div>
+        <div class="input-field col s8" id="input-box">
+          <select id="dataType" name="dataType">
+          </select>
+        </div>
+
+        <div class="col s4" id="association_form">
+            <h5>Association</h5>
+        </div>
+        <div class="input-field col s8" id="input-box">
+          <select id="association" name="association">
+          </select>
+        </div>
+
+        <div class="col s4" id="validation_form">
+            <h5>Validation</h5>
+        </div>
+        <div class="input-field col s8" id="input-box">
+          <select id="validation" name="validation">
+          </select>
+        </div>
+
+      </div>
+
+      </div>
+
+        <div class="actions">
+            <button class="clone">Clone</button>
+            <button class="remove">Remove</button>
+        </div>
+
+
+
     </div>
-    <div class="input-field col s8" id="input-box">
-      <input id="table-name" type="text" class="validate" name="tableName">
-      <label for="table-name">Table  Name</label>
-    </div>
-    </div>
-    <div class="actions">
-        <button class="clone">Clone</button>
-        <button class="remove">Remove</button>
-    </div>
-  </div>
 
   <div class="col s12">
     <input type="Submit" class="btn right">
