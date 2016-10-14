@@ -1,22 +1,27 @@
 {
   "language": {
+    "language": "Choose your language",
     "ruby": "Ruby",
     "javascript": "Javascript"
   },
 
   "framework": {
+    "framework": "Choose your framework",
     "rails": "Rails"
   },
 
   "ORM": {
+    "orm": "Choose your ORM",
     "activeRecord": "Active Record"
   },
 
   "Database": {
+    "database": "Choose your database",
     "psql": "Postgresql"
   },
 
   "native_database_types": {
+        "dataType": "Choose your data type",
         "primaryKey": "primary_key",
         "string": "string",
         "text": "text",
@@ -59,6 +64,7 @@
 
 
 "associations_types": {
+  "associations": "Choose your association type",
   "belongsTo": "belongs_to",
   "hasOne": "has_one",
   "hasMany": "has_many",
@@ -72,6 +78,7 @@
 },
 
   "validations": {
+    "validations": "Choose your validation",
     "acceptance": "acceptance",
     "validatesAssociated": "validates_associated",
     "confirmation": "confirmation",
