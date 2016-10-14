@@ -5,123 +5,99 @@
 
   <div class="row" >
 
-      <div class="col s4">
-          <h5>Language</h5>
-      </div>
+    <div class="col s4">
+      <h5>Language</h5>
+    </div>
 
-      <div class="input-field col s8" id="input-box">
-        <select id="language" name="language">
-        </select>
-      </div>
+    <div class="input-field col s8" id="input-box">
+      <select id="language" name="language"></select>
+    </div>
 
-      <div class="col s4">
-          <h5>Framework</h5>
-      </div>
-      <div class="input-field col s8" id="input-box">
-        <select id="framework" name="framework">
-        </select>
-      </div>
+    <div class="col s4">
+      <h5>Framework</h5>
+    </div>
+    <div class="input-field col s8" id="input-box">
+      <select id="framework" name="framework"></select>
+    </div>
 
-      <div class="col s4">
-          <h5>ORM</h5>
-      </div>
-      <div class="input-field col s8" id="input-box">
-        <select id="ORM" name="orm">
-        </select>
-      </div>
+    <div class="col s4">
+      <h5>ORM</h5>
+    </div>
+    <div class="input-field col s8" id="input-box">
+      <select id="ORM" name="orm"></select>
+    </div>
 
-      <div class="col s4">
-          <h5>Database</h5>
-      </div>
-      <div class="input-field col s8" id="input-box">
-        <select id="Database" name="Database">
-        </select>
-      </div>
+    <div class="col s4">
+      <h5>Database</h5>
+    </div>
+    <div class="input-field col s8" id="input-box">
+      <select id="Database" name="Database"></select>
+    </div>
 
-      <div class="col s4">
-          <h5>APP Name</h5>
-      </div>
-      <div class="input-field col s8" id="input-box">
-        <input id="app-name" type="text" class="validate" name="appName">
-        <label for="app-name">App Name</label>
-      </div>
+    <div class="col s4">
+      <h5>APP Name</h5>
+    </div>
+    <div class="input-field col s8" id="input-box">
+      <input id="app-name" type="text" class="validate" name="appName">
+      <label for="app-name">App Name</label>
+    </div>
 
 
-    <div id="table" class="col s12">
-
-      <div class="col s12" id='one-entry'>
-
-        <div class="col s4" id="table_form">
+    <div class="nest-clone outer-wrap">
+      <div class="toclone">
+        <div class="col s4">
             <h5>Table Name</h5>
         </div>
-        <div class="input-field col s8" id="input-box">
+        <div class="input-field col s8">
           <input id="table-name" type="text" class="validate" name="tableName">
           <label for="table-name">Table Name</label>
         </div>
 
-    <div id="column" class="col s12">
+        <div class="nest-clone inner-wrap">
+          <div class="toclone">
+            <div class="col s4">
+              <h5>Column Name</h5>
+            </div>
+            <div class="input-field col s8" id="input-box">
+              <input id="column-name" type="text" class="validate" name="columnName">
+              <label for="column-name">Column Name</label>
+            </div>
 
-      <div class="col s12" id='column-entry'>
+            <div class="col s4">
+              <h5>Data Type</h5>
+            </div>
+            <div class="input-field col s8" id="input-box">
+              <select id="dataType" name="dataType"></select>
+            </div>
 
-        <div class="col s4" id="column_form">
-            <h5>Column Name</h5>
-        </div>
-        <div class="input-field col s8" id="input-box">
-          <input id="column-name" type="text" class="validate" name="columnName">
-          <label for="column-name">Column Name</label>
-        </div>
+            <div class="col s4">
+              <h5>Association</h5>
+            </div>
+            <div class="input-field col s8" id="input-box">
+              <select id="association" name="association"></select>
+            </div>
 
-        <div class="col s4" id="dataType_form">
-            <h5>Data Type</h5>
-        </div>
-        <div class="input-field col s8" id="input-box">
-          <select id="dataType" name="dataType">
-          </select>
-        </div>
+            <div class="col s4">
+              <h5>Validation</h5>
+            </div>
+            <div class="input-field col s8" id="input-box">
+              <select id="validation" name="validation"></select>
+            </div>
 
-        <div class="col s4" id="association_form">
-            <h5>Association</h5>
-        </div>
-        <div class="input-field col s8" id="input-box">
-          <select id="association" name="association">
-          </select>
-        </div>
-
-        <div class="col s4" id="validation_form">
-            <h5>Validation</h5>
-        </div>
-        <div class="input-field col s8" id="input-box">
-          <select id="validation" name="validation">
-          </select>
+            <div class="clone">add column</div>
+            <div class="delete">delete column</div>
+          </div>
         </div>
 
+        <div class="clone">add table</div>
+        <div class="delete">delete table</div>
       </div>
-
-
-      </div>
-      <div class="column_actions">
-          <button class="addColumn btn">Add column</button>
-          <button class="removeColumn btn">Remove column</button>
-      </div>
-
-
-      </div>
-
-      </div>
-
-        <div class="actions">
-            <button class="clone btn">Add table</button>
-            <button class="remove btn">Remove table</button>
-        </div>
-
-
-
     </div>
 
-  <div class="col s12">
+    <div class="col s12">
     <input type="Submit" class="btn right">
-  </div>
+    </div>
 
-</div>
+  </div>
 
 </form>
