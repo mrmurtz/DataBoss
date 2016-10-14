@@ -58,3 +58,7 @@ h5 {
 #cheat-sheet-content {
   display: none;
 }
+
+.hidden {
+    display: none;
+}
