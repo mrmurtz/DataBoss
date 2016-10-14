@@ -19,6 +19,7 @@ $(document).ready(function() {
 $(function() {
     $('form').submit(function() {
       $("#cheat-sheet-content").toggle('show');
+      console.log($('form'));
       var userSelection = $('form').serializeObject();
       console.log(userSelection);
       $('#result').append(marked(db_commands(userSelection)));
