@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var raw_data;
+
   $.getJSON("/data/raw_data.json", function(json){
       raw_data = json;
       $.each(raw_data.language, function(key, value) {
@@ -14,12 +14,12 @@ $(document).ready(function(){
       $.each(raw_data.Database, function(key, value) {
         $("#Database").append($('<option></option>').attr("value", key).append(value));
       });
+
+      $('select').trigger('contentChanged');
   });
-  $('#language').trigger('contentChanged');
 
-});
+  $('select').on('contentChanged', function() {
+    $(this).material_select();
+  });
 
-$('select').on('contentChanged', function() {
-  alert("hello");
-  $(this).material_select();
 });

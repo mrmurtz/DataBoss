@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  $('select').material_select();
 
   $.fn.serializeObject = function() {
       var o = new UserSelection();
