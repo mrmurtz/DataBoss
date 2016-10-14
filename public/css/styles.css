@@ -13,7 +13,7 @@ h5 {
 
 .form-block {
   float: left;
-  height: 100vh;
+  height: auto;
   background-color: #f7fcf0;
   border-radius: 5px;
   box-shadow:0 0 20px 0 rgba(0,0,0,.5);
@@ -59,6 +59,21 @@ h5 {
   display: none;
 }
 
-.hidden {
-    display: none;
+.delete {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+.clone {
+  padding-top: 0.2em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+#delete-text {
+  padding-top: 1em;
+}
+
+#minus-icon {
+  padding-bottom: 15px;
 }
