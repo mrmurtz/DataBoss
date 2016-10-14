@@ -17,33 +17,7 @@
 
     <% include ../partials/table_top %>
 
-    <div class="nest-clone outer-wrap">
-      <div class="toclone">
-
-        <% include ../partials/table %>
-
-        <div class="nest-clone inner-wrap">
-          <div class="toclone">
-
-            <% include ../partials/column %>
-
-            <div id="delete-text" class="col s4 offset-s6">
-              Add / Remove Column
-            </div>
-            <div  class="delete col s1"><a class="btn-floating btn-sml waves-effect waves-light red right"><i id="minus-icon" class="material-icons">-</i></a></div>
-            <div class="clone col s1"><a class="btn-floating btn-sml waves-effect waves-light red right"><i class="material-icons">add</i></a></div>
-
-          </div>
-        </div>
-
-        <div id="delete-text" class="col s4 offset-s6">
-          Add / Remove Table
-        </div>
-        <div class="delete col s1"><a class="btn-floating btn-sml  waves-effect waves-light red right"><i class="material-icons">-</i></a></div>
-        <div class="clone col s1"><a class="btn-floating btn-sml  waves-effect waves-light red right"><i class="material-icons">add</i></a></div>
-
-      </div>
-    </div>
+    <% include ../partials/table %>
 
     <div class="col s12">
     <input type="Submit" class="btn right">

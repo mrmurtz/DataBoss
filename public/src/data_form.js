@@ -23,6 +23,15 @@ $(document).ready(function(){
       $.each(raw_data.validations, function(key, value) {
         $("#validation").append($('<option></option>').attr("value", key).append(value));
       });
+      $.each(raw_data.native_database_types, function(key, value) {
+        $("#dataType2").append($('<option></option>').attr("value", key).append(value));
+      });
+      $.each(raw_data.associations_types, function(key, value) {
+        $("#association2").append($('<option></option>').attr("value", key).append(value));
+      });
+      $.each(raw_data.validations, function(key, value) {
+        $("#validation2").append($('<option></option>').attr("value", key).append(value));
+      });
       $('select').trigger('contentChanged');
   });
 
