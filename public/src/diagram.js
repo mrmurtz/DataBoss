@@ -1,48 +1,96 @@
-function Diagram() {
+var UseThis = {
+                	"language": "1",
+                	"framework": "1",
+                	"orm": "1",
+                	"db": "1",
+                	"table": {
+                		"1": {
+                			"tableName": "photo",
+                			"columns": {
+                				"1": {
+                					"label": "ID Image",
+                				},
+                				"2": {
+                					"label": "Caption",
+                				}
+                			}
+                		},
+                    "2": {
+                      "tableName": "tag",
+                      "columns": {
+                        "1": {
+                          "label": "ID",
+                        },
+                        "2": {
+                          "label": "Genre",
+                        }
+                      }
+                    }
+                	}
+                };
 
+function outputGenerator(json, tableNumber, columnNumber) {
+    for (var label in json.table[tableNumber].columns[columnNumber]) {
+      var result = json.table[tableNumber].columns[columnNumber];
+      return result;
+  }
 }
 
-// INFORMATION RECEIVED AS JSON OBJECT
-var UserSelection = {language: "1", framework: "1", orm: "1", db: "1", tableName1: "user", columnName: "name"};
-var label = UserSelection.tableName1;
-var property = UserSelection.columnName;
+  function OperatorCreator(json){
+    // HARD CODED
+    var tableLength = 2;
+    var operator = [];
+    // HARD CODED
+    for (var i = 1; i < tableLength+1; i++) {
+      var currentTable = json.table[i];
+      var top = 120;
+      var left = i*200;
+      var title = currentTable.tableName;
+      var output = new Operator(top, left, title);
+      // HARD CODED
+      for (var x = 1; x < 3; x++) {
+          var label = outputGenerator(json, i, x);
+          output.operator.properties.outputs["output_" + x] = label;
+      }
+      operator.push(output);
+    }
+    return operator;
+  }
 
-// CREATING A RECTANGLE
-var rectangle1 = new Rectangle(new Point(50,50), new Point(400,500));
-var cornersize1 = new Size(10, 10);
-var path1 = new Path.RoundRectangle(rectangle1, cornersize1);
+// DATA SHELL
 
-// CREATING THE LINE UNDERNEATH MODEL NAME
-var header1 = new Path();
-var hp1 = new Point(50, 120);
-var hp2 = new Point(400, 120);
-header1.add(hp1);
-header1.add(hp2);
+function Operator(top, left, title){
+  this.operator = {
+          top: top,
+          left: left,
+          properties: {
+            title: title,
+            inputs: {},
+            outputs: {
+            }
+          }
+        };
+      }
 
-// CREATING MODEL NAME
-var text1 = new PointText(new Point(220, 100));
-text1.justification = "center";
-text1.fillColor = "black";
-text1.fontSize = 25;
-text1.content = label;
+// TABLE FUNCTIONS
 
-// CREATING COLUMN NAME
-var column1 = new PointText(new Point(80, 160))
-column1.justification = "left";
-column1.fillColor = "black";
-column1.fontSize = 15;
-column1.content = property + ":";
 
-var model1 = new Group ({
+function convertToData(array) {
+  var data = {
+    operators: {
+    }
+  };
+  data.operators["operator1"] = array[0].operator;
+  data.operators["operator2"] = array[1].operator;
+  return data;
+}
 
-  children: [path1, header1, text1, column1],
 
-  strokeColor: 'black',
-
-  position: view.left
-
-});
-
-var model2 = model1.clone();
-model2.strokeColor = 'black';
-model2.position = new Point(800, 275);
+$(document).ready(function() {
+  var array = OperatorCreator(UseThis);
+  var newData = convertToData(array);
+   // Apply the plugin on a standard, empty div...
+   $('#diagram').flowchart({
+     data: newData
+   });
+ });
