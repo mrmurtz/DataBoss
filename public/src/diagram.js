@@ -12,11 +12,42 @@ var UseThis = {
                 				},
                 				"2": {
                 					"label": "Caption",
-                				}
+                				},
+                        "3": {
+                          "label": "Alf",
+                        }
                 			}
                 		},
                     "2": {
                       "tableName": "tag",
+                      "columns": {
+                        "1": {
+                          "label": "ID",
+                        },
+                        "2": {
+                          "label": "Genre",
+                        },
+                        "3": {
+                          "label": "something",
+                        }
+                      }
+                    },
+                    "3": {
+                      "tableName": "jill",
+                      "columns": {
+                        "1": {
+                          "label": "reason",
+                        },
+                        "2": {
+                          "label": "logic",
+                        },
+                        "3": {
+                          "label": "love",
+                        }
+                      }
+                    },
+                    "4": {
+                      "tableName": "user",
                       "columns": {
                         "1": {
                           "label": "ID",
@@ -38,17 +69,18 @@ function outputGenerator(json, tableNumber, columnNumber) {
 
   function OperatorCreator(json){
     // HARD CODED
-    var tableLength = 2;
+    tableLength = Object.keys(json.table).length;
     var operator = [];
     // HARD CODED
-    for (var i = 1; i < tableLength+1; i++) {
+    for (var i = 1; i < tableLength + 1; i++) {
       var currentTable = json.table[i];
       var top = 120;
       var left = i*200;
       var title = currentTable.tableName;
       var output = new Operator(top, left, title);
+      var columnLength = Object.keys(currentTable.columns).slice(-1)[0]
       // HARD CODED
-      for (var x = 1; x < 3; x++) {
+      for (var x = 1; x < columnLength + 1; x++) {
           var label = outputGenerator(json, i, x);
           output.operator.properties.outputs["output_" + x] = label;
       }
@@ -80,8 +112,9 @@ function convertToData(array) {
     operators: {
     }
   };
-  data.operators["operator1"] = array[0].operator;
-  data.operators["operator2"] = array[1].operator;
+  for (var i = 1; i < tableLength + 1; i++) {
+    data.operators["operator"+i] = array[i-1].operator;
+  }
   return data;
 }
 
