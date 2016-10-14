@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   $.fn.serializeObject = function() {
       var o = new UserSelection();
       var a = this.serializeArray();
@@ -19,25 +18,27 @@ $(document).ready(function() {
 
 $(function() {
     $('form').submit(function() {
+      $("#cheat-sheet-content").toggle('show');
       var userSelection = $('form').serializeObject();
       console.log(userSelection);
-        $('#result').append(marked(db_commands(userSelection)));
+      $('#result').append(marked(db_commands(userSelection)));
+      $("#form-block").css('height', '100%');
       return false;
     });
   });
 });
 
-function db_commands(userSelection) { return "## Commands:\n\n" +
-                  "### Install Rails gem\n\n" +
+function db_commands(userSelection) { return "#### Set Up Your Project:\n\n" +
+                  "##### **Install Rails gem**\n\n" +
                   "`$ gem install rails`\n\n" +
-                  "### Set up new Rails app with PostgreSQL\n\n" +
+                  "##### **Set up new Rails app with PostgreSQL**\n\n" +
                   "`$ rails new " + userSelection.appName + " -d postgresql -T`\n\n" +
-                  "### Build database:\n\n" +
+                  "##### **Build database:**\n\n" +
                   "`$ bin/rake db:create`\n\n" +
                   "Your Terminal should have the following output:\n\n" +
                   "Created database '" + userSelection.appName + "_development'\n\n" +
                   "Created database '" + userSelection.appName + "_test'\n\n" +
-                  "### Creating Models\n\n" +
+                  "#### Creating Models\n\n" +
                   "`$ bin/rails g model " + userSelection.tableName + " <property>:<data type> <property>:<data type>`\n\n" +
                   "This command:\n\n" +
                   "* creates a new model, which tells the app what a 'student' is and what properties (first name and last name) it has.\n\n" +

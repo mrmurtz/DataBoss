@@ -1,3 +1,60 @@
-#page-container {
-  margin-top: 5em;
+/*Colour Pallette - Light to Dark
+#f7fcf0    #e0f3db    #ccebc5
+#a8ddb5    #7bccc4    #4eb3d3
+#2b8cbe    #0868ac    #084081 */
+
+h5 {
+  font-size: 1.2em;
+}
+
+.nav-wrapper {
+  background-color: #0868ac;
+}
+
+.form-block {
+  float: left;
+  height: 100vh;
+  background-color: #f7fcf0;
+  border-radius: 5px;
+  box-shadow:0 0 20px 0 rgba(0,0,0,.5);
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+  -o-transition: 0.5s ease-in;
+  -ms-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+
+.form-block.form-show {
+  width: 330px;
+  margin: 0 0 0 -250px;
+
+}
+
+#form-title {
+  margin-bottom: 0px;
+}
+
+#form-btn {
+  background-color: #084081;
+}
+
+#diagram {
+  padding-right: 2em;
+  padding-left: 1em;
+  float: right;
+}
+
+#diagram-canvas {
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+#input-box {
+  margin-top: 0px;
+}
+
+#cheat-sheet-content {
+  display: none;
 }
