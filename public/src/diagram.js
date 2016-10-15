@@ -8,13 +8,13 @@ var UseThis = {
                 			"tableName": "photo",
                 			"columns": {
                 				"1": {
-                					"label": "ID Image",
+                					"label": "Title",
                 				},
                 				"2": {
                 					"label": "Caption",
                 				},
                         "3": {
-                          "label": "Alf",
+                          "label": "Image",
                         }
                 			}
                 		},
@@ -22,27 +22,27 @@ var UseThis = {
                       "tableName": "tag",
                       "columns": {
                         "1": {
-                          "label": "ID",
+                          "label": "Like",
                         },
                         "2": {
                           "label": "Genre",
                         },
                         "3": {
-                          "label": "something",
+                          "label": "Title",
                         }
                       }
                     },
                     "3": {
-                      "tableName": "jill",
+                      "tableName": "Life",
                       "columns": {
                         "1": {
-                          "label": "reason",
+                          "label": "Reason",
                         },
                         "2": {
-                          "label": "logic",
+                          "label": "Logic",
                         },
                         "3": {
-                          "label": "love",
+                          "label": "Love",
                         }
                       }
                     },
@@ -50,10 +50,10 @@ var UseThis = {
                       "tableName": "user",
                       "columns": {
                         "1": {
-                          "label": "ID",
+                          "label": "Name",
                         },
                         "2": {
-                          "label": "Genre",
+                          "label": "Email",
                         }
                       }
                     }
@@ -97,7 +97,12 @@ function Operator(top, left, title){
           left: left,
           properties: {
             title: title,
-            inputs: {},
+            inputs: {
+              ins: {
+                label: 'ID',
+                multiple: false
+              }
+            },
             outputs: {
             }
           }
