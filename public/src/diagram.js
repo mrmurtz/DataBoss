@@ -1,134 +1,96 @@
-var UseThis = {
-                	"language": "1",
-                	"framework": "1",
-                	"orm": "1",
-                	"db": "1",
-                	"table": {
-                		"1": {
-                			"tableName": "photo",
-                			"columns": {
-                				"1": {
-                					"label": "Title",
-                				},
-                				"2": {
-                					"label": "Caption",
-                				},
-                        "3": {
-                          "label": "Image",
-                        }
-                			}
-                		},
-                    "2": {
-                      "tableName": "tag",
-                      "columns": {
-                        "1": {
-                          "label": "Like",
-                        },
-                        "2": {
-                          "label": "Genre",
-                        },
-                        "3": {
-                          "label": "Title",
-                        }
-                      }
-                    },
-                    "3": {
-                      "tableName": "Life",
-                      "columns": {
-                        "1": {
-                          "label": "Reason",
-                        },
-                        "2": {
-                          "label": "Logic",
-                        },
-                        "3": {
-                          "label": "Love",
-                        }
-                      }
-                    },
-                    "4": {
-                      "tableName": "user",
-                      "columns": {
-                        "1": {
-                          "label": "Name",
-                        },
-                        "2": {
-                          "label": "Email",
-                        }
-                      }
-                    }
-                	}
-                };
+$(document).ready(function(){
+  $('#form-submit-btn').click(function(){
+    console.log('hello');
+    var table1 = $('input[name=table1]').val();
+    var col1 = $('input[name=columnName1]').val();
+    var col1type = $('select[name=dataType1] option:selected').text();
+    var col2 = $('input[name=columnName2]').val();
+    var col2type = $('select[name=dataType2] option:selected').text();
+    var table2 = $('input[name=table2]').val();
+    var col3 = $('input[name=columnName3]').val();
+    var col3type = $('select[name=dataType3] option:selected').text();
+    var col4 = $('input[name=columnName4]').val();
+    var col4type = $('select[name=dataType4] option:selected').text();
 
-function outputGenerator(json, tableNumber, columnNumber) {
-    for (var label in json.table[tableNumber].columns[columnNumber]) {
-      var result = json.table[tableNumber].columns[columnNumber];
-      return result;
-  }
-}
+    console.log(col1type);
+    console.log(col2type);
+    console.log(col3type);
+    console.log(col4type);
 
-  function OperatorCreator(json){
-    // HARD CODED
-    tableLength = Object.keys(json.table).length;
-    var operator = [];
-    // HARD CODED
-    for (var i = 1; i < tableLength + 1; i++) {
-      var currentTable = json.table[i];
-      var top = 120;
-      var left = i*200;
-      var title = currentTable.tableName;
-      var output = new Operator(top, left, title);
-      var columnLength = Object.keys(currentTable.columns).slice(-1)[0]
-      // HARD CODED
-      for (var x = 1; x < columnLength + 1; x++) {
-          var label = outputGenerator(json, i, x);
-          output.operator.properties.outputs["output_" + x] = label;
-      }
-      operator.push(output);
-    }
-    return operator;
-  }
-
-// DATA SHELL
-
-function Operator(top, left, title){
-  this.operator = {
-          top: top,
-          left: left,
+    var data = {
+      operators: {
+        operator1: {
+          top: 40,
+          left: 50,
           properties: {
-            title: title,
+            title: table1,
             inputs: {
-              ins: {
-                label: 'ID',
-                multiple: false
+              input_1: {
+                label: 'ID:'
+              },
+              input_2: {
+                label: col1 + ": ",
+              },
+              input_3: {
+                label: col2 + ": ",
               }
             },
             outputs: {
+              output_1: {
+                label: 'Serial',
+              },
+              output_2: {
+                label: col1type,
+              },
+              output_3: {
+                label: col2type,
+              }
             }
           }
-        };
+        },
+        operator2: {
+          top: 40,
+          left: 400,
+          properties: {
+            title: table2,
+            inputs: {
+              input_1: {
+                label: 'ID:',
+              },
+              input_2: {
+                label: col3 + ': ',
+              },
+              input_3: {
+                label: col4 + ': ',
+              }
+            },
+            outputs: {
+              output_1: {
+                label: 'Serial',
+              },
+              output_2: {
+                label: col3type,
+              },
+              output_3: {
+                label: col4type,
+              }
+            }
+          }
+        },
+      },
+      links: {
+        link_1: {
+          fromOperator: 'operator1',
+          fromConnector: 'output_1',
+          toOperator: 'operator2',
+          toConnector: 'input_1',
+        },
       }
-
-// TABLE FUNCTIONS
-
-
-function convertToData(array) {
-  var data = {
-    operators: {
-    }
-  };
-  for (var i = 1; i < tableLength + 1; i++) {
-    data.operators["operator"+i] = array[i-1].operator;
-  }
-  return data;
-}
+    };
 
 
-$(document).ready(function() {
-  var array = OperatorCreator(UseThis);
-  var newData = convertToData(array);
-   // Apply the plugin on a standard, empty div...
-   $('#diagram').flowchart({
-     data: newData
-   });
- });
+  $('#diagram-canvas').flowchart({
+      data: data
+    });
+  });
+});
