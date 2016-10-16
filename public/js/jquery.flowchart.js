@@ -9,7 +9,7 @@ $(function () {
             data: {},
             distanceFromArrow: 3,
             defaultOperatorClass: 'flowchart-default-operator',
-            defaultLinkColor: '#3366ff',
+            defaultLinkColor: '#0868AC',
             defaultSelectedLinkColor: 'black',
             linkWidth: 10,
             grid: 20,
@@ -671,7 +671,7 @@ $(function () {
                 this._unsetTemporaryLink();
             }
         },
-        
+
         _unsetTemporaryLink: function () {
             this.lastOutputConnectorClicked = null;
             this.objs.layers.temporaryLink.hide();

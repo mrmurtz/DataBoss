@@ -23,6 +23,7 @@ $(function() {
       var userSelection = $('form').serializeObject();
       console.log(JSON.stringify(userSelection));
       $('#result').append(marked(db_commands(userSelection)));
+      $('#diagram-title').empty().append(userSelection.appName);
       $("#form-block").css('height', '100%');
       return false;
     });
