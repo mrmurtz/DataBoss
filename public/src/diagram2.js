@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  $('input[type=Submit]').click(function(){
+  $('#form-submit-btn').click(function(){
+    console.log('hello');
     var table1 = $('input[name=table1]').val();
     var col1 = $('input[name=columnName1]').val();
     var col1type = $('select[name=dataType1] option:selected').text();
