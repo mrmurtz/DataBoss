@@ -43,7 +43,7 @@
 }
 
 .flowchart-operator-outputs .flowchart-operator-connector-label {
-    text-align: right;
+    text-align: left;
     margin-right: 5px;
 }
 
@@ -106,8 +106,9 @@
 
 .flowchart-operator {
     position: absolute;
-    width: 140px;
+    width: 150px;
     border: 1px solid #CCCCCC;
+    border-radius: 5px;
     background: #FAFAFA;
     pointer-events: initial;
 }
