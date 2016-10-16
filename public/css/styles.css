@@ -27,15 +27,10 @@ h5 {
 .form-block.form-show {
   width: 330px;
   margin: 0 0 0 -250px;
-
 }
 
 #form-title {
   margin-bottom: 0px;
-}
-
-#form-btn {
-  background-color: #084081;
 }
 
 #diagram {
@@ -57,23 +52,4 @@ h5 {
 
 #cheat-sheet-content {
   display: none;
-}
-
-.delete {
-  margin-top: 0.6em;
-  margin-bottom: 0.6em;
-}
-
-.clone {
-  padding-top: 0.2em;
-  margin-top: 0.6em;
-  margin-bottom: 0.6em;
-}
-
-#delete-text {
-  padding-top: 1em;
-}
-
-#minus-icon {
-  padding-bottom: 15px;
 }
