@@ -47,16 +47,8 @@ $(document).ready(function(){
 
   $("#form-slide-in").click(function(event){
     event.preventDefault();
-    $("#form").toggleClass("form-show col s3");
     $("#diagram").toggleClass("s11");
-    $("#form-content").toggle('show');
-  });
-
-  $("#form-slide-in2").click(function(event){
-    event.preventDefault();
     $("#form").toggleClass("form-show col s3");
-    $("#diagram").toggleClass("s11");
-    $("#form-content").toggle('show');
   });
 
 });
