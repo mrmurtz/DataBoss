@@ -1,5 +1,8 @@
 $(document).ready(function(){
+
+
   $('input[type=Submit]').click(function(){
+    var diagramTitle = $('#app-name').val();
     var table1 = $('input[name=table1]').val();
     var col1 = $('input[name=columnName1]').val();
     var col1type = $('select[name=dataType1] option:selected').text();
@@ -86,10 +89,31 @@ $(document).ready(function(){
         },
       }
     };
-
-
+  $('#btnSave').css('display', 'block');
+  $('#diagram-title').html(diagramTitle);
   $('#diagram-canvas').flowchart({
       data: data
     });
   });
+
+
+
+  $(function() {
+    $("#btnSave").click(function() {
+        html2canvas($("#diagram-canvas"), {
+            onrendered: function(canvas) {
+                theCanvas = canvas;
+                document.body.appendChild(canvas);
+
+                // Convert and download as image
+                Canvas2Image.saveAsPNG(canvas);
+                // $("#img-out").append(canvas);
+                // Clean up
+                //document.body.removeChild(canvas);
+            }
+        });
+    });
+});
+
+
 });

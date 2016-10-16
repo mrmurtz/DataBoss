@@ -48,12 +48,26 @@ h5 {
   border-style: solid;
   border-color: grey;
   border-width: 1px;
-  background:url(
-
-data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIUlEQVQoU2NkYGCQZCACMEIVPiegVnJUIb4QggcPwSAHAJYhCQU0Rip2AAAAAElFTkSuQmCC   ) repeat;
+  border-radius: 5px;
+  background:
+        linear-gradient(-90deg, rgba(0, 0, 0, .03) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, .03) 1px, transparent 1px),
+        linear-gradient(-90deg, rgba(0, 0, 0, .03) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, .03) 1px, transparent 1px),
+        linear-gradient(transparent 3px, transparent 3px, transparent 78px, transparent 78px),
+        linear-gradient(-90deg, transparent 1px, transparent 1px),
+        linear-gradient(-90deg, transparent 3px, transparent 3px, transparent 78px, transparent 78px),
+        linear-gradient(transparent 1px, transparent 1px), transparent;
+    background-size:
+        15px 15px,
+        15px 15px,
+        15px 15px,
+        15px 15px,
+        15px 15px,
+        15px 15px,
+        15px 15px,
+        15px
 }
-
-
 
 #input-box {
   margin-top: 0px;
