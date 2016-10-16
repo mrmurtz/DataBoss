@@ -1,6 +1,8 @@
 $(document).ready(function(){
+
+
   $('#form-submit-btn').click(function(){
-    console.log('hello');
+    var diagramTitle = $('#app-name').val();
     var table1 = $('input[name=table1]').val();
     var col1 = $('input[name=columnName1]').val();
     var col1type = $('select[name=dataType1] option:selected').text();
@@ -87,10 +89,10 @@ $(document).ready(function(){
         },
       }
     };
-
-
+  $('#diagram-title').html(diagramTitle);
   $('#diagram-canvas').flowchart({
       data: data
     });
   });
+
 });
